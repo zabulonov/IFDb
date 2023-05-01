@@ -10,4 +10,8 @@
       <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="6.0.8" />
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\IFDb.BusinessLogic\IFDb.BusinessLogic.csproj" />
+    </ItemGroup>
+
 </Project>
