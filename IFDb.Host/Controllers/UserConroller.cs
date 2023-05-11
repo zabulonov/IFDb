@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace IFDb.Host.Controllers;
 
-[Route("User")]
+[Route("API/User")]
 [ApiController]
 public class UserConroller
 {
@@ -15,9 +15,28 @@ public class UserConroller
         _userService = userService;
     }
 
-    [HttpPost("add")]
-    public async Task AddPostUser([FromBody] UserModel model)
+    [HttpPost("register")]
+    public async Task AddUser([FromBody] UserModel model)
     {
         await _userService.AddUser(model);
+    }
+    
+    [HttpGet("info/{userId}")]
+    public async Task<object> InfoUser(long userId)
+    {
+        var userInfo = await _userService.GetUserInfo(userId);
+        return userInfo;
+    }
+    
+    [HttpGet("delete/{userId}")]
+    public async Task DeleteUser(long userId)
+    {
+        await _userService.DeleteUser(userId);
+    }
+    
+    [HttpPost("edit/{id}")]
+    public async Task EditUser([FromBody] UserModel model, long id)
+    {
+        await _userService.EditUser(model, id);
     }
 }

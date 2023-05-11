@@ -1,0 +1,16 @@
+@model Microsoft.EntityFrameworkCore.DbSet<Core.User>
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<h2>Список пользователей</h2>
+<p><a asp-action="Index" asp-controller="Home">На главную</a></p>
+<p><a asp-action="Create">Добавить пользователя</a></p>
+<table class="table">
+    <tr><th>Логин</th><th>Пароль</th></tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Login</td>
+            <td>@item.Password</td>
+        </tr>
+    }
+</table>

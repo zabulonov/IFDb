@@ -13,7 +13,7 @@ public class ReviewConfiguration : IEntityTypeConfiguration<Review>
         builder.HasKey(x => x.Id);
         builder.Property(x => x.Id).ValueGeneratedOnAdd();
         
-        builder.Property(x => x.Creator).IsRequired();
+        builder.Property(x => x.CreatorId).IsRequired();
         builder.Property(x => x.Grade).IsRequired();
         builder.Property(x => x.Text).IsRequired();
     }
