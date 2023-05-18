@@ -4,7 +4,7 @@ public class Review
 {
     public long Id { get; private set; }
     
-    public User Creator { get; private set; }
+    public long CreatorId { get; private set; }
     
     public int Grade { get; private set; }
     

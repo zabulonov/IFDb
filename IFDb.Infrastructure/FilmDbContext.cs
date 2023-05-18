@@ -23,8 +23,14 @@ public class FilmDbContext : DbContext
         await SaveChangesAsync();
     }
 
-    public Task<User?> FindAuthor(long id)
+    public Task<User?> FindUser(long id)
     {
         return Set<User>().FirstOrDefaultAsync(x => x.Id == id);
     }
+
+    public DbSet<User> Users { get; set; }
+    public DbSet<FilmInfo> Films { get; set; }
+
+
+
 }

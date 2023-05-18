@@ -20,4 +20,10 @@ public class User
         Password = model.Password;
         isAdmin = false;
     }
+
+    public void UpdateUser(UserModel model)
+    {
+        Login = model.Login;
+        Password = model.Password;
+    }
 }
