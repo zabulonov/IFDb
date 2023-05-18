@@ -29,6 +29,7 @@ public class FilmDbContext : DbContext
     }
 
     public DbSet<User> Users { get; set; }
+    public DbSet<FilmInfo> Films { get; set; }
 
 
 

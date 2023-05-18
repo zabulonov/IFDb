@@ -1,3 +1,4 @@
+using Core;
 using IFDb.BusinessLogic.Services;
 using IFDb.Host.Controllers;
 using IFDb.Infrastructure;
@@ -8,6 +9,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddSingleton(isp => new FilmDbContextFactory(builder.Configuration.GetConnectionString("DefaultConnection")));
 builder.Services.AddSingleton<UserService>();
+builder.Services.AddSingleton<FilmInfo>();
 builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages();
 

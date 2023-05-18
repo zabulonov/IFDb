@@ -10,6 +10,4 @@ public class FilmInfo
     
     public int Year { get; private set; }
     
-    
-    
 }
